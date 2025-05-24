@@ -49,7 +49,7 @@ const projects = [
     title: "LifeLink",
     description:
       "A full-stack hospital management system with dedicated portals for hospitals, doctors, and patients. Enables appointment scheduling, patient record handling, doctor onboarding, and more. Built on the MERN stack with secure authentication and a clean workflow across all users.",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/projects/lifelink.png",
     tech: ["MongoDB", "Express", "React", "Node.js"],
     links: {
       demo: "#",
@@ -138,7 +138,7 @@ function ProjectCard({ project }) {
   return (
     <motion.div
       ref={cardRef}
-      className="cyberpunk-card h-full"
+      className="h-full cyberpunk-card"
       style={{
         rotateX,
         rotateY,
@@ -151,9 +151,9 @@ function ProjectCard({ project }) {
       whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.2 }}
     >
-      <div className="p-6 h-full flex flex-col">
+      <div className="flex flex-col h-full p-6">
         <div
-          className="relative w-full aspect-video mb-4 overflow-hidden rounded-lg"
+          className="relative w-full mb-4 overflow-hidden rounded-lg aspect-video"
           style={{ transform: "translateZ(20px)" }}
         >
           <Image
@@ -168,22 +168,22 @@ function ProjectCard({ project }) {
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-70"></div>
         </div>
 
-        <h3 className="text-xl font-bold mb-2" style={{ transform: "translateZ(30px)" }}>
+        <h3 className="mb-2 text-xl font-bold" style={{ transform: "translateZ(30px)" }}>
           {project.title}
         </h3>
 
-        <p className="text-gray-400 text-sm mb-4 flex-grow" style={{ transform: "translateZ(25px)" }}>
+        <p className="flex-grow mb-4 text-sm text-gray-400" style={{ transform: "translateZ(25px)" }}>
           {project.description}
         </p>
 
         <div className="mb-4" style={{ transform: "translateZ(35px)" }}>
-          <h4 className="text-xs uppercase tracking-wider text-gray-500 mb-2">Tech Stack</h4>
+          <h4 className="mb-2 text-xs tracking-wider text-gray-500 uppercase">Tech Stack</h4>
           <div className="flex flex-wrap gap-2">
             {project.tech.map((tech) => (
               <Badge
                 key={tech}
                 variant="outline"
-                className="bg-purple-900/30 border-purple-500/30 text-purple-300 hover:bg-purple-800/40"
+                className="text-purple-300 bg-purple-900/30 border-purple-500/30 hover:bg-purple-800/40"
               >
                 {tech}
               </Badge>
@@ -194,13 +194,13 @@ function ProjectCard({ project }) {
         <div className="flex gap-2 mt-auto" style={{ transform: "translateZ(40px)" }}>
           <Button size="sm" variant="default" className="gap-2 bg-purple-600 hover:bg-purple-700" asChild>
             <a href={project.links.demo} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="h-4 w-4" />
+              <ExternalLink className="w-4 h-4" />
               Demo
             </a>
           </Button>
           <Button size="sm" variant="outline" className="gap-2 border-purple-500/50 hover:bg-purple-950/30" asChild>
             <a href={project.links.github} target="_blank" rel="noopener noreferrer">
-              <Github className="h-4 w-4" />
+              <Github className="w-4 h-4" />
               Code
             </a>
           </Button>
@@ -235,7 +235,7 @@ export default function ProjectsSection() {
       {/* Projects Grid */}
       <motion.div 
         key={currentPage}
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12"
+        className="grid grid-cols-1 gap-8 mb-12 md:grid-cols-2"
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -50 }}
@@ -247,17 +247,17 @@ export default function ProjectsSection() {
       </motion.div>
 
       {/* Navigation Controls */}
-      <div className="flex justify-center items-center gap-6">
+      <div className="flex items-center justify-center gap-6">
         {/* Previous Button */}
         <Button
           onClick={goToPrevPage}
           variant="outline"
           size="lg"
-          className="group relative overflow-hidden bg-black/20 backdrop-blur-sm border-2 border-purple-500/50 hover:border-purple-400 hover:bg-purple-950/30 transition-all duration-300"
+          className="relative overflow-hidden transition-all duration-300 border-2 group bg-black/20 backdrop-blur-sm border-purple-500/50 hover:border-purple-400 hover:bg-purple-950/30"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <ChevronLeft className="h-6 w-6 text-purple-400 group-hover:text-purple-300 relative z-10" />
-          <span className="ml-2 text-purple-400 group-hover:text-purple-300 relative z-10">Previous</span>
+          <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-purple-600/20 to-cyan-400/20 group-hover:opacity-100"></div>
+          <ChevronLeft className="relative z-10 w-6 h-6 text-purple-400 group-hover:text-purple-300" />
+          <span className="relative z-10 ml-2 text-purple-400 group-hover:text-purple-300">Previous</span>
         </Button>
 
         {/* Page Indicator */}
@@ -283,17 +283,17 @@ export default function ProjectsSection() {
           onClick={goToNextPage}
           variant="outline"
           size="lg"
-          className="group relative overflow-hidden bg-black/20 backdrop-blur-sm border-2 border-purple-500/50 hover:border-purple-400 hover:bg-purple-950/30 transition-all duration-300"
+          className="relative overflow-hidden transition-all duration-300 border-2 group bg-black/20 backdrop-blur-sm border-purple-500/50 hover:border-purple-400 hover:bg-purple-950/30"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <span className="mr-2 text-purple-400 group-hover:text-purple-300 relative z-10">Next</span>
-          <ChevronRight className="h-6 w-6 text-purple-400 group-hover:text-purple-300 relative z-10" />
+          <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-purple-600/20 to-cyan-400/20 group-hover:opacity-100"></div>
+          <span className="relative z-10 mr-2 text-purple-400 group-hover:text-purple-300">Next</span>
+          <ChevronRight className="relative z-10 w-6 h-6 text-purple-400 group-hover:text-purple-300" />
         </Button>
       </div>
 
       {/* Project Counter */}
-      <div className="text-center mt-6">
-        <p className="text-gray-400 text-sm">
+      <div className="mt-6 text-center">
+        <p className="text-sm text-gray-400">
           Showing {getCurrentProjects().length} of {projects.length} projects
         </p>
       </div>

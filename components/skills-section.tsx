@@ -14,18 +14,18 @@ if (typeof window !== "undefined") {
 const skills = [
   {
     category: "Frontend",
-    icon: <Code className="h-6 w-6 text-purple-400" />,
+    icon: <Code className="w-6 h-6 text-purple-400" />,
     items: ["React", "Next.js", "HTML", "CSS", "JavaScript", "Tailwind CSS", "TypeScript"],
   },
   {
     category: "Backend",
-    icon: <Database className="h-6 w-6 text-cyan-400" />,
-    items: ["Node.js", "Express", "Python", "Django", "JavaScript", "REST API","MySQL", "MongoDB"],
+    icon: <Database className="w-6 h-6 text-cyan-400" />,
+    items: ["Node.js", "Express", "Python", "Django", "JavaScript", "REST API","SQL", "MongoDB","PHP"],
   },
   {
     category: "Mobile App",
-    icon: <PenTool className="h-6 w-6 text-pink-400" />,
-    items: ["React Native", "Flutter", "Dart","TypeScript"],
+    icon: <PenTool className="w-6 h-6 text-pink-400" />,
+    items: ["React Native", "Flutter", "Dart","TypeScript","Expo"],
   },
   
 ]
@@ -78,9 +78,9 @@ function SkillCategory({ category, icon, items }) {
   }, [])
 
   return (
-    <motion.div className="cyberpunk-card p-6" variants={item}>
+    <motion.div className="p-6 cyberpunk-card" variants={item}>
       <div className="flex items-center gap-3 mb-4">
-        <div className="p-2 rounded-lg bg-black/50 border border-purple-500/20">{icon}</div>
+        <div className="p-2 border rounded-lg bg-black/50 border-purple-500/20">{icon}</div>
         <h3 className="text-xl font-bold">{category}</h3>
       </div>
 
@@ -88,7 +88,7 @@ function SkillCategory({ category, icon, items }) {
         {items.map((skill) => (
           <span
             key={skill}
-            className="skill-badge text-sm px-3 py-1 rounded-full bg-black/50 border border-purple-500/30 text-gray-300 hover:border-purple-500/70 hover:text-white transition-colors duration-300"
+            className="px-3 py-1 text-sm text-gray-300 transition-colors duration-300 border rounded-full skill-badge bg-black/50 border-purple-500/30 hover:border-purple-500/70 hover:text-white"
           >
             {skill}
           </span>
@@ -101,7 +101,7 @@ function SkillCategory({ category, icon, items }) {
 export default function SkillsSection() {
   return (
     <motion.div
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
       variants={container}
       initial="hidden"
       whileInView="show"

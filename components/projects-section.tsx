@@ -25,11 +25,11 @@ const projects = [
     title: "RescueBytes",
     description:
       "🆘 A disaster response platform with real-time location-based coordination. Mobile app for citizens to send SOS alerts, view local updates, and request help. Web dashboard for administrators to manage emergencies, deploy responders, and track ongoing incidents. Designed for fast and efficient crisis handling.",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/projects/RescueBytes.png",
     tech: ["React", "Node.js", "MongoDB", "Express"],
     links: {
-      demo: "#",
-      github: "#",
+      demo: "https://rbbackend-hlah.onrender.com/",
+      github: "https://github.com/jenjose72/RescueBytes/tree/new-feature-branch",
     },
   },
   {
@@ -37,11 +37,11 @@ const projects = [
     title: "BMchats",
     description:
       "A sleek real-time chat app featuring direct messages and group chats. Built with React and powered by Socket.io for instant communication. Includes typing indicators, online status tracking, and MongoDB for message persistence.",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/projects/BMChats.png",
     tech: ["React", "Socket.io", "Node.js", "Express", "MongoDB"],
     links: {
-      demo: "#",
-      github: "#",
+      demo: "https://bmchats.onrender.com/",
+      github: "https://github.com/jenjose72/BMChats",
     },
   },
   {

@@ -1,3 +1,4 @@
+"use client"
 import { Suspense } from "react"
 import Link from "next/link"
 import LandingHero from "@/components/landing-hero"
@@ -8,10 +9,21 @@ import AboutSection from "@/components/about-section"
 import ContactSection from "@/components/contact-section"
 import { Button } from "@/components/ui/button"
 import { ChevronDown } from "lucide-react"
+import { useEffect } from "react"
 
 export default function Home() {
+
+  useEffect(() => {
+    // Activate the backend when the component mounts
+    activateBackend()
+  },[])
+
+  const activateBackend = async () => {
+    await fetch('https://rbbackend-hlah.onrender.com/')
+    await fetch('https://bmchats.onrender.com/')
+  }
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
+    <main className="flex min-h-screen flex-col items-center justify-between scrollbar-hide overflow-auto">
       {/* Landing Hero with 3D elements */}
       <section id="hero" className="w-full h-screen relative overflow-hidden">
         <Suspense

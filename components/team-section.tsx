@@ -25,7 +25,7 @@ const teamMembers = [
     name: "Jefin Francis",
     role: "Full Stack Flutter Alchemist",
     image: "/placeholder.svg?height=400&width=400",
-    skills: ["Flutter", "MongoDB", "Express.js", "React", "Node.js"],
+    skills: ["Flutter","React",  "Express.js", "Node.js","MongoDB","TensorFlow"],
     bio: "Combines Flutter and MERN to create scalable apps that perform well on all platforms.",
     social: {
       twitter: "#",
@@ -38,7 +38,7 @@ const teamMembers = [
     name: "Mahadev P Nair",
     role: "Web & Data Synergist",
     image: "/placeholder.svg?height=400&width=400",
-    skills: ["React", "Django", "SQL"],
+    skills: ["React", "Django", "SQL","Electron","FastAPI"],
     bio: "Works on both frontend and backend, building reliable systems with clean design and strong logic.",
     social: {
       twitter: "#",
@@ -51,7 +51,7 @@ const teamMembers = [
     name: "R Sanjay",
     role: "Backend Systems Architect",
     image: "/placeholder.svg?height=400&width=400",
-    skills: ["Django", "SQL"],
+    skills: ["Django", "SQL","FastAPI","TensorFlow"],
     bio: "Specializes in backend systems with a focus on performance, data integrity, and security.",
     social: {
       twitter: "#",
@@ -89,7 +89,7 @@ export default function TeamSection() {
 
   return (
     <motion.div
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+      className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4"
       variants={container}
       initial="hidden"
       whileInView="show"
@@ -98,12 +98,12 @@ export default function TeamSection() {
       {teamMembers.map((member) => (
         <motion.div
           key={member.id}
-          className="cyberpunk-card p-6 h-full flex flex-col"
+          className="flex flex-col h-full p-6 cyberpunk-card"
           variants={item}
           onMouseEnter={() => setActiveId(member.id)}
           onMouseLeave={() => setActiveId(null)}
         >
-          <div className="relative w-full aspect-square mb-4 overflow-hidden rounded-lg">
+          <div className="relative w-full mb-4 overflow-hidden rounded-lg aspect-square">
             <Image
               src={member.image || "/placeholder.svg"}
               alt={member.name}
@@ -116,18 +116,18 @@ export default function TeamSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-70"></div>
           </div>
 
-          <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-          <p className="text-purple-400 mb-3">{member.role}</p>
+          <h3 className="mb-1 text-xl font-bold">{member.name}</h3>
+          <p className="mb-3 text-purple-400">{member.role}</p>
 
-          <p className="text-gray-400 text-sm mb-4 flex-grow">{member.bio}</p>
+          <p className="flex-grow mb-4 text-sm text-gray-400">{member.bio}</p>
 
           <div className="mb-4">
-            <h4 className="text-xs uppercase tracking-wider text-gray-500 mb-2">Skills</h4>
+            <h4 className="mb-2 text-xs tracking-wider text-gray-500 uppercase">Skills</h4>
             <div className="flex flex-wrap gap-2">
               {member.skills.map((skill) => (
                 <span
                   key={skill}
-                  className="text-xs px-2 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300"
+                  className="px-2 py-1 text-xs text-purple-300 border rounded-full bg-purple-900/30 border-purple-500/30"
                 >
                   {skill}
                 </span>
@@ -136,21 +136,21 @@ export default function TeamSection() {
           </div>
 
           <div className="flex gap-2 mt-auto">
-            <Button variant="ghost" size="icon" className="rounded-full h-8 w-8" asChild>
+            <Button variant="ghost" size="icon" className="w-8 h-8 rounded-full" asChild>
               <a href={member.social.github} target="_blank" rel="noopener noreferrer">
-                <Github className="h-4 w-4" />
+                <Github className="w-4 h-4" />
                 <span className="sr-only">GitHub</span>
               </a>
             </Button>
-            <Button variant="ghost" size="icon" className="rounded-full h-8 w-8" asChild>
+            <Button variant="ghost" size="icon" className="w-8 h-8 rounded-full" asChild>
               <a href={member.social.twitter} target="_blank" rel="noopener noreferrer">
-                <Twitter className="h-4 w-4" />
+                <Twitter className="w-4 h-4" />
                 <span className="sr-only">Twitter</span>
               </a>
             </Button>
-            <Button variant="ghost" size="icon" className="rounded-full h-8 w-8" asChild>
+            <Button variant="ghost" size="icon" className="w-8 h-8 rounded-full" asChild>
               <a href={member.social.linkedin} target="_blank" rel="noopener noreferrer">
-                <Linkedin className="h-4 w-4" />
+                <Linkedin className="w-4 h-4" />
                 <span className="sr-only">LinkedIn</span>
               </a>
             </Button>

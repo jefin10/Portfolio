@@ -52,8 +52,8 @@ const projects = [
     image: "/projects/lifelink.png",
     tech: ["MongoDB", "Express", "React", "Node.js"],
     links: {
-      demo: "#",
-      github: "#",
+      demo: "https://lifelink-pxpw.onrender.com",
+      github: "https://github.com/jefin10/LifeLink",
     },
   },
   {
@@ -61,11 +61,11 @@ const projects = [
     title: "PlayTube",
     description:
       "A modern YouTube clone using React and Tailwind CSS with real-time video fetching via the YouTube Data API. Features responsive UI, video playback, category browsing, and search. Planned backend expansion includes user history, likes, and saved video support.",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/projects/yt-home.png",
     tech: ["React", "Tailwind CSS"],
     links: {
-      demo: "#",
-      github: "#",
+      demo: "https://youtube-clone-neon-six.vercel.app/",
+      github: "https://github.com/jefin10/Youtube_clone",
     },
   },
   {
@@ -82,14 +82,14 @@ const projects = [
   },
   {
     id: 7,
-    title: "InsightBoard",
+    title: "LoopX",
     description:
       "A data dashboard for startups and teams to visualize KPIs, sales, and customer engagement in real time. Modular components powered by Chart.js and a drag-and-drop interface make it fully customizable.",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/projects/loopx.png",
     tech: ["React", "Chart.js", "Firebase"],
     links: {
-      demo: "#",
-      github: "#",
+      demo: "https://incredible-crepe-ae8c57.netlify.app",
+      github: "https://github.com/jefin10/loopX",
     },
   },
   {

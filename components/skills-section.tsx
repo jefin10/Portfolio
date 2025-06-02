@@ -20,7 +20,7 @@ const skills = [
   {
     category: "Backend",
     icon: <Database className="w-6 h-6 text-cyan-400" />,
-    items: ["Node.js", "Express", "Python", "Django", "JavaScript", "REST API","SQL", "MongoDB","PHP"],
+    items: ["Node.js", "Express", "Python", "Django", "JavaScript", "REST API","SQL", "MongoDB","PHP", "Supabase"],
   },
   {
     category: "Mobile App",

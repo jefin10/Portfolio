@@ -5,6 +5,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { Github, Linkedin, Twitter } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 const teamMembers = [
 	{
@@ -156,7 +157,7 @@ export default function TeamSection() {
 							className="flex items-center gap-2 text-white bg-purple-600 rounded-full shadow-md hover:bg-purple-700 shadow-purple-500/20"
 							asChild
 						>
-							<a
+							<Link
 								href={member.portfolio}
 								target="_blank"
 								rel="noopener noreferrer"
@@ -176,7 +177,7 @@ export default function TeamSection() {
 									<path d="M12 3a9 9 0 0 1 0 18"></path>
 								</svg>
 								<span className="text-xs">Portfolio</span>
-							</a>
+							</Link>
 						</Button>
 
 						<div className="flex gap-1.5">

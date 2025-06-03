@@ -12,7 +12,7 @@ const teamMembers = [
 		id: 1,
 		name: "Jen Jose Jeeson",
 		role: "Full Stack App Alchemist",
-		image: "/placeholder.svg?height=400&width=400",
+		image: "/other/j.jpg",
 		skills: ["React Native", "MongoDB", "Express.js", "React", "Node.js"],
 		bio: "Builds smooth, high-quality apps across web and mobile using the MERN stack and React Native.",
 		portfolio: "https://jenjosejeeson.vercel.app/", // Add portfolio URL
@@ -26,7 +26,7 @@ const teamMembers = [
 		id: 2,
 		name: "Jefin Francis",
 		role: "Full Stack Flutter Alchemist",
-		image: "/placeholder.svg?height=400&width=400",
+		image: "/other/mine.jpg",
 		skills: [
 			"Flutter",
 			"React",
@@ -61,7 +61,7 @@ const teamMembers = [
 		id: 4,
 		name: "R Sanjay",
 		role: "Backend Systems Architect",
-		image: "/placeholder.svg?height=400&width=400",
+		image: "/other/ss.png",
 		skills: ["Django", "SQL", "FastAPI", "TensorFlow"],
 		bio: "Specializes in backend systems with a focus on performance, data integrity, and security.",
 		portfolio: "https://portfolio.rsanjay.com", // Add portfolio URL

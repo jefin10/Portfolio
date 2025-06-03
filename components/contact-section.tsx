@@ -220,7 +220,60 @@ export default function ContactSection() {
         </motion.div>
 
         {/* Contact info section remains the same */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="flex flex-col justify-between"
+        >
+          <div className="cyberpunk-card p-8 mb-6">
+            <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-lg bg-black/50 border border-purple-500/20">
+                  <Mail className="h-5 w-5 text-purple-400" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-medium text-gray-400">Email</h4>
+                  <p className="text-white">hello@quantumdevs.com</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-lg bg-black/50 border border-purple-500/20">
+                  <Phone className="h-5 w-5 text-purple-400" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-medium text-gray-400">Phone</h4>
+                  <p className="text-white">+1 (555) 123-4567</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-lg bg-black/50 border border-purple-500/20">
+                  <MapPin className="h-5 w-5 text-purple-400" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-medium text-gray-400">Location</h4>
+                  <p className="text-white">San Francisco, CA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="cyberpunk-card p-8">
+            <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
+            <p className="text-gray-300 mb-6">
+              Whether you have a project in mind or just want to chat about the latest in web development, we'd love to
+              hear from you.
+            </p>
+            <p className="text-gray-300">Our team is available Monday through Friday, 9am to 6pm PST.</p>
+          </div>
+        </motion.div>
       </div>
     </div>
+      
   )
 }

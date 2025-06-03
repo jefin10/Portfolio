@@ -8,9 +8,11 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Quantum Devs | Futuristic Development Team",
-  description: "A team of expert developers creating cutting-edge digital experiences",
-    generator: 'v0.dev'
+  title: "NxtBit Solutions",
+  description: "Empowering the Future of Software Development",
+  icons:{
+    icon:"/favicon.png",
+  }
 }
 
 export default function RootLayout({

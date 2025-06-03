@@ -57,7 +57,7 @@ export default function Home() {
       {/* Projects Section */}
       <section id="projects" className="w-full py-20 bg-gradient-to-b from-black to-purple-950/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-6xl font-bold mb-16 text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">
+          <h2 className="text-4xl md:text-6xl font-bold mb-16 text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 p-2">
             Our Projects
           </h2>
           <ProjectsSection />
@@ -97,18 +97,8 @@ export default function Home() {
       {/* Footer */}
       <footer className="w-full py-6 bg-black border-t border-purple-500/20">
         <div className="container mx-auto px-4 text-center text-gray-400">
-          <p>© {new Date().getFullYear()} Quantum Devs. All rights reserved.</p>
-          <div className="flex justify-center gap-4 mt-4">
-            <Link href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
-              Twitter
-            </Link>
-            <Link href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
-              GitHub
-            </Link>
-            <Link href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
-              LinkedIn
-            </Link>
-          </div>
+          <p>© {new Date().getFullYear()} NxtBitSolns. All rights reserved.</p>
+          
         </div>
       </footer>
     </main>

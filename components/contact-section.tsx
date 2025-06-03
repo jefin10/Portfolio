@@ -82,7 +82,7 @@ export default function ContactSection() {
   }
 
   return (
-    <div className="relative">
+    <div className="relative z-10">
       <Particles />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -91,7 +91,7 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="cyberpunk-card p-8"
+          className="relative z-20 bg-gray-900/50 border border-gray-800 rounded-lg backdrop-blur-sm p-8"
         >
           <h3 className="text-2xl font-bold mb-6">Send Us a Message</h3>
 
@@ -103,12 +103,12 @@ export default function ContactSection() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Name</FormLabel>
+                      <FormLabel className="text-white">Name</FormLabel>
                       <FormControl>
                         <Input
                           placeholder="Your name"
+                          className="bg-black/50 border-purple-500/30 focus:border-purple-500/70 text-white placeholder:text-gray-400"
                           {...field}
-                          className="bg-black/50 border-purple-500/30 focus:border-purple-500/70"
                         />
                       </FormControl>
                       <FormMessage />
@@ -121,13 +121,13 @@ export default function ContactSection() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email</FormLabel>
+                      <FormLabel className="text-white">Email</FormLabel>
                       <FormControl>
                         <Input
                           placeholder="Your email"
                           type="email"
+                          className="bg-black/50 border-purple-500/30 focus:border-purple-500/70 text-white placeholder:text-gray-400"
                           {...field}
-                          className="bg-black/50 border-purple-500/30 focus:border-purple-500/70"
                         />
                       </FormControl>
                       <FormMessage />
@@ -141,12 +141,12 @@ export default function ContactSection() {
                 name="subject"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Subject</FormLabel>
+                    <FormLabel className="text-white">Subject</FormLabel>
                     <FormControl>
                       <Input
                         placeholder="Subject of your message"
+                        className="bg-black/50 border-purple-500/30 focus:border-purple-500/70 text-white placeholder:text-gray-400"
                         {...field}
-                        className="bg-black/50 border-purple-500/30 focus:border-purple-500/70"
                       />
                     </FormControl>
                     <FormMessage />
@@ -159,13 +159,13 @@ export default function ContactSection() {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Message</FormLabel>
+                    <FormLabel className="text-white">Message</FormLabel>
                     <FormControl>
                       <Textarea
                         placeholder="Your message"
-                        {...field}
                         rows={5}
-                        className="bg-black/50 border-purple-500/30 focus:border-purple-500/70 resize-none"
+                        className="bg-black/50 border-purple-500/30 focus:border-purple-500/70 resize-none text-white placeholder:text-gray-400"
+                        {...field}
                       />
                     </FormControl>
                     <FormMessage />

@@ -17,8 +17,7 @@ const teamMembers = [
 		bio: "Builds smooth, high-quality apps across web and mobile using the MERN stack and React Native.",
 		portfolio: "https://jenjosejeeson.vercel.app/",
 		social: {
-			twitter: "https://twitter.com/jenjosejeeson",
-			github: "https://github.com/jenjosejeeson",
+			github: "https://github.com/jenjose72",
 			linkedin: "https://linkedin.com/in/jenjosejeeson",
 		},
 	},
@@ -38,8 +37,7 @@ const teamMembers = [
 		bio: "Combines Flutter and MERN to create scalable apps that perform well on all platforms.",
 		portfolio: "https://www.jefin.tech/", 
 		social: {
-			twitter: "https://twitter.com/jefinfrancis",
-			github: "https://github.com/jefinfrancis",
+			github: "https://github.com/jefin10",
 			linkedin: "https://linkedin.com/in/jefinfrancis",
 		},
 	},
@@ -52,9 +50,8 @@ const teamMembers = [
 		bio: "Works on both frontend and backend, building reliable systems with clean design and strong logic.",
 		portfolio: "https://portfolio.mahadevnair.com",
 		social: {
-			twitter: "https://twitter.com/mahadevpnair",
-			github: "https://github.com/mahadevpnair",
-			linkedin: "https://linkedin.com/in/mahadevpnair",
+			github: "https://github.com/mahadevpnair10",
+			linkedin: "https://www.linkedin.com/in/mahadev-p-nair/",
 		},
 	},
 	{
@@ -66,9 +63,8 @@ const teamMembers = [
 		bio: "Specializes in backend systems with a focus on performance, data integrity, and security.",
 		portfolio: "https://ssanjay.vercel.app/",
 		social: {
-			twitter: "https://twitter.com/rsanjay",
-			github: "https://github.com/rsanjay",
-			linkedin: "https://linkedin.com/in/rsanjay",
+			github: "https://github.com/Sanju-afk",
+			linkedin: "https://www.linkedin.com/in/sanjay-r-311a83307/",
 		},
 	},
 ]
@@ -122,7 +118,7 @@ export default function TeamSection() {
 			{teamMembers.map((member) => (
 				<motion.div
 					key={member.id}
-					className="flex flex-col h-full p-6 bg-gray-900/50 border border-gray-800 rounded-lg backdrop-blur-sm hover:border-purple-500/50 transition-all duration-300"
+					className="flex flex-col h-full p-6 transition-all duration-300 border border-gray-800 rounded-lg bg-gray-900/50 backdrop-blur-sm hover:border-purple-500/50"
 					variants={item}
 					onMouseEnter={() => setActiveId(member.id)}
 					onMouseLeave={() => setActiveId(null)}
@@ -138,7 +134,7 @@ export default function TeamSection() {
 									activeId === member.id ? "scale(1.05)" : "scale(1)",
 							}}
 						/>
-						<div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+						<div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 to-transparent"></div>
 					</div>
 
 					<h3 className="mb-1 text-xl font-bold text-white">{member.name}</h3>
@@ -164,11 +160,11 @@ export default function TeamSection() {
 						</div>
 					</div>
 
-					<div className="flex flex-wrap justify-between items-center gap-2 mt-auto">
+					<div className="flex flex-wrap items-center justify-between gap-2 mt-auto">
 						<Button
 							variant="default"
 							size="sm"
-							className="flex items-center gap-2 text-white bg-purple-600 rounded-full shadow-md hover:bg-purple-700 shadow-purple-500/20 cursor-pointer"
+							className="flex items-center gap-2 text-white bg-purple-600 rounded-full shadow-md cursor-pointer hover:bg-purple-700 shadow-purple-500/20"
 							asChild
 						>
 							<Link
@@ -201,7 +197,7 @@ export default function TeamSection() {
 									key={platform}
 									variant="ghost"
 									size="sm"
-									className="w-8 h-8 p-0 rounded-full hover:bg-gray-800 cursor-pointer transition-colors duration-200"
+									className="w-8 h-8 p-0 transition-colors duration-200 rounded-full cursor-pointer hover:bg-gray-800"
 									asChild
 								>
 									<Link
@@ -210,9 +206,8 @@ export default function TeamSection() {
 										rel="noopener noreferrer"
 										className="flex items-center justify-center w-full h-full"
 									>
-										{platform === 'github' && <Github className="w-4 h-4 text-gray-300 hover:text-white transition-colors" />}
-										{platform === 'twitter' && <Twitter className="w-4 h-4 text-gray-300 hover:text-blue-400 transition-colors" />}
-										{platform === 'linkedin' && <Linkedin className="w-4 h-4 text-gray-300 hover:text-blue-600 transition-colors" />}
+										{platform === 'github' && <Github className="w-4 h-4 text-gray-300 transition-colors hover:text-white" />}
+										{platform === 'linkedin' && <Linkedin className="w-4 h-4 text-gray-300 transition-colors hover:text-blue-600" />}
 										<span className="sr-only">{platform}</span>
 									</Link>
 								</Button>

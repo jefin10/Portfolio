@@ -90,20 +90,20 @@ export default function ContactSection() {
     <div className="relative z-10">
       <Particles />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="relative z-20 bg-gray-900/50 border border-gray-800 rounded-lg backdrop-blur-sm p-8"
+          className="relative z-20 p-8 border border-gray-800 rounded-lg bg-gray-900/50 backdrop-blur-sm"
         >
-          <h3 className="text-2xl font-bold mb-6">Send Us a Message</h3>
+          <h3 className="mb-6 text-2xl font-bold">Send Us a Message</h3>
 
           <Form {...form}>
             <form ref={formRef} onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               {/* Form fields remain the same */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <FormField
                   control={form.control}
                   name="name"
@@ -113,7 +113,7 @@ export default function ContactSection() {
                       <FormControl>
                         <Input
                           placeholder="Your name"
-                          className="bg-black/50 border-purple-500/30 focus:border-purple-500/70 text-white placeholder:text-gray-400"
+                          className="text-white bg-black/50 border-purple-500/30 focus:border-purple-500/70 placeholder:text-gray-400"
                           {...field}
                         />
                       </FormControl>
@@ -132,7 +132,7 @@ export default function ContactSection() {
                         <Input
                           placeholder="Your email"
                           type="email"
-                          className="bg-black/50 border-purple-500/30 focus:border-purple-500/70 text-white placeholder:text-gray-400"
+                          className="text-white bg-black/50 border-purple-500/30 focus:border-purple-500/70 placeholder:text-gray-400"
                           {...field}
                         />
                       </FormControl>
@@ -151,7 +151,7 @@ export default function ContactSection() {
                     <FormControl>
                       <Input
                         placeholder="Subject of your message"
-                        className="bg-black/50 border-purple-500/30 focus:border-purple-500/70 text-white placeholder:text-gray-400"
+                        className="text-white bg-black/50 border-purple-500/30 focus:border-purple-500/70 placeholder:text-gray-400"
                         {...field}
                       />
                     </FormControl>
@@ -170,7 +170,7 @@ export default function ContactSection() {
                       <Textarea
                         placeholder="Your message"
                         rows={5}
-                        className="bg-black/50 border-purple-500/30 focus:border-purple-500/70 resize-none text-white placeholder:text-gray-400"
+                        className="text-white resize-none bg-black/50 border-purple-500/30 focus:border-purple-500/70 placeholder:text-gray-400"
                         {...field}
                       />
                     </FormControl>
@@ -182,12 +182,12 @@ export default function ContactSection() {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 text-white border border-purple-500/50 shadow-lg shadow-purple-500/20"
+                className="w-full text-white border shadow-lg bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 border-purple-500/50 shadow-purple-500/20"
               >
                 {isSubmitting ? (
                   <span className="flex items-center gap-2">
                     <svg
-                      className="animate-spin h-4 w-4 text-white"
+                      className="w-4 h-4 text-white animate-spin"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -210,7 +210,7 @@ export default function ContactSection() {
                   </span>
                 ) : (
                   <span className="flex items-center gap-2">
-                    <Send className="h-4 w-4" />
+                    <Send className="w-4 h-4" />
                     Send Message
                   </span>
                 )}

@@ -59,7 +59,7 @@ const teamMembers = [
 		name: "R Sanjay",
 		role: "Backend Systems Architect",
 		image: "/other/ss.png",
-		skills: ["Django", "SQL", "FastAPI", "TensorFlow"],
+		skills: ["Django", "SQL","Flask", "FastAPI", "TensorFlow"],
 		bio: "Specializes in backend systems with a focus on performance, data integrity, and security.",
 		portfolio: "https://ssanjay.vercel.app/",
 		social: {

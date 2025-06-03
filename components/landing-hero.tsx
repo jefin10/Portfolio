@@ -101,7 +101,7 @@ function Scene() {
           anchorX="center"
           anchorY="middle"
         >
-          HardCode Crew
+          NxtBit Solutions
         </Text>
       </Float>
     </group>
@@ -121,7 +121,7 @@ export default function LandingHero() {
 
       <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 glow-text bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400">
+          <h1 className="text-5xl md:text-7xl font-bold mb-4 glow-text bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400 pb-2">
             Crafting Digital Futures
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-gray-300">

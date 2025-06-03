@@ -17,8 +17,8 @@ const projects = [
 		image: "/projects/mv.png",
 		tech: ["React Native", "React", "Django"],
 		links: {
-			demo: "#",
-			github: "#",
+			demo: "https://movieverse-nine.vercel.app",
+			github: "https://github.com/jefin10/MovieVerse",
 		},
 	},
 	{
@@ -78,7 +78,7 @@ const projects = [
 		tech: ["React"],
 		links: {
 			demo: "https://microsoftedge.microsoft.com/addons/detail/webnoter/mfjidnneofhnhfgmejckjhpffclaebjc",
-			github: "#",
+			github: "https://github.com/mahadevpnair10/WebNoter",
 		},
 	},
 	{
@@ -101,7 +101,7 @@ const projects = [
 		image: "/projects/wl.png",
 		tech: ["React Native", "Supabase"],
 		links: {
-			demo: "#",
+			demo: "https://wellnex-pi.vercel.app/",
 			github: "https://github.com/jenjose72/Wellnex/",
 		},
 	},

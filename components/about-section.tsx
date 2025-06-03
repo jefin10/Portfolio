@@ -47,18 +47,18 @@ export default function AboutSection() {
     <div ref={containerRef} className="relative grid-pattern">
       <div className="max-w-4xl mx-auto">
         <div className="mb-16 text-center">
-          <motion.p
+            <motion.p
             className="text-lg md:text-xl text-gray-300 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-          >
-            HardCodeCrew is a collective of forward-thinking developers and designers passionate about creating
-            cutting-edge digital experiences. Founded in 2020, we've been pushing the boundaries of what's possible on
-            the web, combining technical expertise with creative vision to deliver projects that stand out in the
-            digital landscape.
-          </motion.p>
+            >
+            We are a dedicated team of university students, passionate about web development and digital innovation.
+            With our combined experience and fresh perspectives, we're eager to create elegant, efficient solutions
+            for real-world challenges. Our academic foundation and hands-on expertise drive us to develop
+            standout web experiences that blend creativity with technical excellence.
+            </motion.p>
         </div>
 
         <div className="relative">

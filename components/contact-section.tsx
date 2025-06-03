@@ -237,7 +237,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-gray-400">Email</h4>
-                  <p className="text-white">hello@quantumdevs.com</p>
+                  <p className="text-white">nxtbitsolns@gmail.com</p>
                 </div>
               </div>
 
@@ -247,7 +247,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-gray-400">Phone</h4>
-                  <p className="text-white">+1 (555) 123-4567</p>
+                  <p className="text-white">+91 9946381688</p>
                 </div>
               </div>
 
@@ -257,7 +257,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-gray-400">Location</h4>
-                  <p className="text-white">San Francisco, CA</p>
+                  <p className="text-white">Kochi, Kerala</p>
                 </div>
               </div>
             </div>
@@ -269,7 +269,7 @@ export default function ContactSection() {
               Whether you have a project in mind or just want to chat about the latest in web development, we'd love to
               hear from you.
             </p>
-            <p className="text-gray-300">Our team is available Monday through Friday, 9am to 6pm PST.</p>
+            <p className="text-gray-300">Our team is available 24/7, ready to assist you at any time.</p>
           </div>
         </motion.div>
       </div>

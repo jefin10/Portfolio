@@ -26,7 +26,7 @@ const teamMembers = [
 		id: 2,
 		name: "Jefin Francis",
 		role: "Full Stack Flutter Alchemist",
-		image: "/other/mine.jpg",
+		image: "/other/mine.JPG",
 		skills: [
 			"Flutter",
 			"React",
@@ -64,7 +64,7 @@ const teamMembers = [
 		image: "/other/ss.png",
 		skills: ["Django", "SQL", "FastAPI", "TensorFlow"],
 		bio: "Specializes in backend systems with a focus on performance, data integrity, and security.",
-		portfolio: "https://portfolio.rsanjay.com",
+		portfolio: "https://ssanjay.vercel.app/",
 		social: {
 			twitter: "https://twitter.com/rsanjay",
 			github: "https://github.com/rsanjay",

@@ -45,10 +45,10 @@ const teamMembers = [
 		id: 3,
 		name: "Mahadev P Nair",
 		role: "Web & Data Synergist",
-		image: "/placeholder.svg?height=400&width=400",
+		image: "/other/image.png",
 		skills: ["React", "Django", "SQL", "Electron", "FastAPI"],
 		bio: "Works on both frontend and backend, building reliable systems with clean design and strong logic.",
-		portfolio: "https://portfolio.mahadevnair.com",
+		portfolio: "https://profile-mahadevpnair10s-projects.vercel.app/",
 		social: {
 			github: "https://github.com/mahadevpnair10",
 			linkedin: "https://www.linkedin.com/in/mahadev-p-nair/",

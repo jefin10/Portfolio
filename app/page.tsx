@@ -18,6 +18,15 @@ export default function Home() {
     activateBackend()
   },[])
 
+    useEffect(() => {
+      fetch("/api/notify-visit", {
+        method: "POST",
+      })
+        .then((res) => res.json())
+        .then((data) => console.log("📩 Visit notification sent:", data))
+        .catch((err) => console.error("❌ Notification error:", err));
+    }, []);
+
   const activateBackend = async () => {
     await fetch('https://rbbackend-hlah.onrender.com/')
     await fetch('https://bmchats.onrender.com/')

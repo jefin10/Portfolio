@@ -23,41 +23,41 @@ export default function Home() {
     await fetch('https://bmchats.onrender.com/')
   }
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between scrollbar-hide overflow-auto">
+    <main className="flex flex-col items-center justify-between min-h-screen overflow-auto scrollbar-hide">
       {/* Landing Hero with 3D elements */}
-      <section id="hero" className="w-full h-screen relative overflow-hidden">
+      <section id="hero" className="relative w-full h-screen overflow-hidden">
         <Suspense
-          fallback={<div className="w-full h-screen bg-black flex items-center justify-center">Loading...</div>}
+          fallback={<div className="flex items-center justify-center w-full h-screen bg-black">Loading...</div>}
         >
           <LandingHero />
         </Suspense>
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute transform -translate-x-1/2 bottom-8 left-1/2 animate-bounce">
           <Link href="#team">
             <Button
               variant="ghost"
               size="icon"
-              className="rounded-full bg-black/20 backdrop-blur-sm border border-purple-500/30 hover:bg-black/30"
+              className="border rounded-full bg-black/20 backdrop-blur-sm border-purple-500/30 hover:bg-black/30"
             >
-              <ChevronDown className="h-6 w-6 text-purple-400" />
+              <ChevronDown className="w-6 h-6 text-purple-400" />
             </Button>
           </Link>
         </div>
       </section>
-
-      {/* Team Section */}
-      <section id="team" className="w-full py-20 bg-black">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-6xl font-bold mb-16 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400">
-            Our Team
+      {/* About Section */}
+      <section id="about" className="w-full py-20 bg-gradient-to-b from-black to-purple-950/30">
+        <div className="container px-4 mx-auto">
+          <h2 className="mb-16 text-4xl font-bold text-center text-transparent md:text-6xl bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
+            About Us
           </h2>
-          <TeamSection />
+          <AboutSection />
         </div>
       </section>
+      
 
       {/* Projects Section */}
       <section id="projects" className="w-full py-20 bg-gradient-to-b from-black to-purple-950/30">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-6xl font-bold mb-16 text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 p-2">
+        <div className="container px-4 mx-auto">
+          <h2 className="p-2 mb-16 text-4xl font-bold text-center text-transparent md:text-6xl bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
             Our Projects
           </h2>
           <ProjectsSection />
@@ -66,28 +66,28 @@ export default function Home() {
 
       {/* Skills Section */}
       <section id="skills" className="w-full py-20 bg-black">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-6xl font-bold mb-16 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400">
+        <div className="container px-4 mx-auto">
+          <h2 className="mb-16 text-4xl font-bold text-center text-transparent md:text-6xl bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">
             Our Skills
           </h2>
           <SkillsSection />
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="w-full py-20 bg-gradient-to-b from-black to-purple-950/30">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-6xl font-bold mb-16 text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">
-            About Us
+      {/* Team Section */}
+      <section id="team" className="w-full py-20 bg-black">
+        <div className="container px-4 mx-auto">
+          <h2 className="mb-16 text-4xl font-bold text-center text-transparent md:text-6xl bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">
+            Our Team
           </h2>
-          <AboutSection />
+          <TeamSection />
         </div>
       </section>
 
       {/* Contact Section */}
       <section id="contact" className="w-full py-20 bg-black">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-6xl font-bold mb-16 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400">
+        <div className="container px-4 mx-auto">
+          <h2 className="mb-16 text-4xl font-bold text-center text-transparent md:text-6xl bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">
             Get In Touch
           </h2>
           <ContactSection />
@@ -96,8 +96,8 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="w-full py-6 bg-black border-t border-purple-500/20">
-        <div className="container mx-auto px-4 text-center text-gray-400">
-          <p>© {new Date().getFullYear()} NxtBitSolns. All rights reserved.</p>
+        <div className="container px-4 mx-auto text-center text-gray-400">
+          <p>© {new Date().getFullYear()} Klaang V. All rights reserved.</p>
           
         </div>
       </footer>

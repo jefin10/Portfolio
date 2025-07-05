@@ -6,32 +6,24 @@ import { Zap, Users, Lightbulb, Code, Rocket } from "lucide-react"
 
 const values = [
   {
-    icon: <Zap className="h-6 w-6 text-purple-400" />,
+    icon: <Zap className="w-6 h-6 text-purple-400" />,
     title: "Innovation",
     description:
       "We push the boundaries of what's possible on the web, constantly exploring new technologies and approaches.",
   },
+  
   {
-    icon: <Users className="h-6 w-6 text-cyan-400" />,
-    title: "Collaboration",
-    description: "We believe in the power of teamwork and open communication to deliver exceptional results.",
-  },
-  {
-    icon: <Lightbulb className="h-6 w-6 text-yellow-400" />,
+    icon: <Lightbulb className="w-6 h-6 text-yellow-400" />,
     title: "Creativity",
     description: "We approach each project with fresh eyes and creative thinking to solve complex problems.",
   },
   {
-    icon: <Code className="h-6 w-6 text-green-400" />,
+    icon: <Code className="w-6 h-6 text-green-400" />,
     title: "Quality",
     description:
       "We're committed to writing clean, maintainable code and delivering polished, high-performance products.",
   },
-  {
-    icon: <Rocket className="h-6 w-6 text-red-400" />,
-    title: "Growth",
-    description: "We're constantly learning and evolving, staying at the forefront of web development trends.",
-  },
+  
 ]
 
 export default function AboutSection() {
@@ -48,7 +40,7 @@ export default function AboutSection() {
       <div className="max-w-4xl mx-auto">
         <div className="mb-16 text-center">
             <motion.p
-            className="text-lg md:text-xl text-gray-300 leading-relaxed"
+            className="text-lg leading-relaxed text-gray-300 md:text-xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -75,16 +67,16 @@ export default function AboutSection() {
             >
               <div className={`flex ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"} items-center gap-8`}>
                 <div className="w-1/2">
-                  <div className="cyberpunk-card p-6 h-full">
+                  <div className="h-full p-6 cyberpunk-card">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="p-2 rounded-lg bg-black/50 border border-purple-500/20">{value.icon}</div>
+                      <div className="p-2 border rounded-lg bg-black/50 border-purple-500/20">{value.icon}</div>
                       <h3 className="text-xl font-bold">{value.title}</h3>
                     </div>
                     <p className="text-gray-300">{value.description}</p>
                   </div>
                 </div>
 
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-black border-2 border-purple-500 glow-border"></div>
+                <div className="absolute w-6 h-6 transform -translate-x-1/2 bg-black border-2 border-purple-500 rounded-full left-1/2 glow-border"></div>
 
                 <div className="w-1/2"></div>
               </div>
@@ -99,8 +91,8 @@ export default function AboutSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-bold mb-4 glow-text">Our Mission</h3>
-          <p className="text-lg text-gray-300 leading-relaxed">
+          <h3 className="mb-4 text-2xl font-bold glow-text">Our Mission</h3>
+          <p className="text-lg leading-relaxed text-gray-300">
             To create digital experiences that inspire, engage, and push the boundaries of what's possible on the web,
             while delivering exceptional value to our clients and users.
           </p>
@@ -109,11 +101,11 @@ export default function AboutSection() {
 
       {/* Floating elements for visual interest */}
       <motion.div
-        className="absolute -top-20 -left-20 w-40 h-40 rounded-full bg-purple-500/10 blur-3xl"
+        className="absolute w-40 h-40 rounded-full -top-20 -left-20 bg-purple-500/10 blur-3xl"
         style={{ y }}
       />
       <motion.div
-        className="absolute -bottom-20 -right-20 w-40 h-40 rounded-full bg-cyan-500/10 blur-3xl"
+        className="absolute w-40 h-40 rounded-full -bottom-20 -right-20 bg-cyan-500/10 blur-3xl"
         style={{ y: useTransform(scrollYProgress, [0, 1], [-100, 100]) }}
       />
     </div>

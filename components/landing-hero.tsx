@@ -101,7 +101,7 @@ function Scene() {
           anchorX="center"
           anchorY="middle"
         >
-          NxtBit Solutions
+          Klaang V
         </Text>
       </Float>
     </group>

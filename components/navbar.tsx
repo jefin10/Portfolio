@@ -41,7 +41,7 @@ export default function Navbar() {
             href="/"
             className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400"
           >
-            NxtBit Solutions
+            Klaang V
           </Link>
 
           {/* Desktop Navigation */}

@@ -10,6 +10,7 @@ import ContactSection from "@/components/contact-section"
 import { Button } from "@/components/ui/button"
 import { ChevronDown } from "lucide-react"
 import { useEffect } from "react"
+import ServicesSection from "@/components/services"
 
 export default function Home() {
 
@@ -62,7 +63,11 @@ export default function Home() {
         </div>
       </section>
       
-
+      <section id='services' className="w-full py-20 bg-black">
+        <div className="container px-4 mx-auto">
+          <ServicesSection></ServicesSection>
+        </div>
+      </section>
       {/* Projects Section */}
       <section id="projects" className="w-full py-20 bg-gradient-to-b from-black to-purple-950/30">
         <div className="container px-4 mx-auto">

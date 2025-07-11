@@ -45,14 +45,14 @@ const teamMembers = [
 	{
 		id: 3,
 		name: "Ashwin S",
-		role: "Web & Data Synergist",
-		image: "/other/j.jpg",
-		skills: ["React", "Django", "SQL", "Electron", "FastAPI"],
-		bio: "Works on both frontend and backend, building reliable systems with clean design and strong logic.",
-		portfolio: "https://profile-mahadevpnair10s-projects.vercel.app/",
+		role: "Full Stack Web Developer",
+		image: "/other/ash.jpg",
+		skills: ["React", "PHP", "SQL", "NET", "Python"],
+		bio: "Specializes in building robust web applications and data-driven systems using modern frameworks and technologies. ",
+		portfolio: "https://www.linkedin.com/in/ashwin-s-67877728a/",
 		social: {
-			github: "https://github.com/mahadevpnair10",
-			linkedin: "https://www.linkedin.com/in/mahadev-p-nair/",
+			github: "https://github.com/Shanwis",
+			linkedin: "https://www.linkedin.com/in/ashwin-s-67877728a/",
 		},
 	},
 	{

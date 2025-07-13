@@ -8,7 +8,14 @@ export async function POST(req: NextRequest) {
     req.ip || 
     "Unknown IP";
 
-  //console.log("📍 Visitor IP:", ip);
+  // Get resolution and location from request body
+  let visitorInfo = { resolution: "Unknown", location: "Unknown" };
+  
+  try {
+    visitorInfo = await req.json();
+  } catch (e) {
+    console.error("Failed to parse request body");
+  }
 
   // Setup mail transporter
   const transporter = nodemailer.createTransport({
@@ -19,17 +26,27 @@ export async function POST(req: NextRequest) {
     },
   });
 
+  // Format the email content with all visitor information
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to: process.env.NOTIFY_EMAIL,
     subject: "🚨 New Visit to Portfolio",
-    text: `Someone visited your site.\n\n📍 IP Address: ${ip}`,
+    text: `Someone visited your site.\n\n📍 IP Address: ${ip}\n🌎 Location: ${visitorInfo.location || "Unknown"}\n📱 Resolution: ${visitorInfo.resolution || "Unknown"}`,
+    html: `
+      <h2 style="color: #9333ea;">New Portfolio Visit</h2>
+      <p>Someone just visited your portfolio website.</p>
+      <ul>
+        <li><strong>📍 IP Address:</strong> ${ip}</li>
+        <li><strong>🌎 Location:</strong> ${visitorInfo.location || "Unknown"}</li>
+        <li><strong>📱 Resolution:</strong> ${visitorInfo.resolution || "Unknown"}</li>
+      </ul>
+      <p style="font-size: 12px; color: #666;">Sent from Klaang V Portfolio</p>
+    `
   };
 
   try {
     await transporter.sendMail(mailOptions);
-    //console.log("✅ Email sent with IP:", ip);
-    return NextResponse.json({ message: "Email sent with IP address" });
+    return NextResponse.json({ message: "Email sent with visitor information" });
   } catch (error) {
     console.error("❌ Email error:", error);
     return NextResponse.json(

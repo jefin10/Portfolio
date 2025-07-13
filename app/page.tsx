@@ -20,12 +20,48 @@ export default function Home() {
   },[])
 
     useEffect(() => {
-      fetch("/api/notify-visit", {
-        method: "POST",
-      })
-        .then((res) => res.json())
-        .then((data) => console.log("📩 Visit notification sent:", data))
-        .catch((err) => console.error("❌ Notification error:", err));
+      // Get screen resolution
+      const resolution = `${window.screen.width}x${window.screen.height}`;
+      
+      // Create an object to store visitor information
+      const visitorInfo = {
+        resolution: resolution,
+        location: "Fetching..."
+      };
+      
+      // Try to get location information using a free geolocation API
+      fetch("https://ipapi.co/json/")
+        .then(res => res.json())
+        .then(locationData => {
+          // Update the location information with city and country if available
+          const locationStr = locationData.city && locationData.country_name 
+            ? `${locationData.city}, ${locationData.country_name}`
+            : "Location Unavailable";
+          
+          visitorInfo.location = locationStr;
+          
+          // Now send all the visitor information to our API
+          return fetch("/api/notify-visit", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(visitorInfo)
+          });
+        })
+        .catch(() => {
+          // If location fetch fails, send the notification with what we have
+          return fetch("/api/notify-visit", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(visitorInfo)
+          });
+        })
+        .then(res => res.json())
+        .then(data => console.log("📩 Visit notification sent:", data))
+        .catch(err => console.error("❌ Notification error:", err));
     }, []);
 
   const activateBackend = async () => {

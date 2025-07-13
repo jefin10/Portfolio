@@ -26,42 +26,56 @@ export default function Home() {
       // Create an object to store visitor information
       const visitorInfo = {
         resolution: resolution,
-        location: "Fetching..."
+        location: "Unknown Location"
+      };
+      
+      // Function to send notification after getting location data
+      const sendNotification = (locationInfo: { resolution: string; location: string }) => {
+        fetch("/api/notify-visit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(locationInfo)
+        })
+          .then(res => res.json())
+          .then(data => console.log("📩 Visit notification sent:", data))
+          .catch(err => console.error("❌ Notification error:", err));
       };
       
       // Try to get location information using a free geolocation API
+      // Set a timeout to ensure we don't wait too long
+      const locationTimeout = setTimeout(() => {
+        // If the timeout triggers, send with unknown location
+        sendNotification(visitorInfo);
+      }, 3000); // 3 second timeout
+      
       fetch("https://ipapi.co/json/")
-        .then(res => res.json())
+        .then(res => {
+          if (!res.ok) throw new Error('Location API response was not ok');
+          return res.json();
+        })
         .then(locationData => {
+          // Clear the timeout since we got data
+          clearTimeout(locationTimeout);
+          
           // Update the location information with city and country if available
           const locationStr = locationData.city && locationData.country_name 
             ? `${locationData.city}, ${locationData.country_name}`
             : "Location Unavailable";
           
-          visitorInfo.location = locationStr;
-          
-          // Now send all the visitor information to our API
-          return fetch("/api/notify-visit", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(visitorInfo)
+          // Send notification with the location information
+          sendNotification({
+            resolution: resolution,
+            location: locationStr
           });
         })
-        .catch(() => {
-          // If location fetch fails, send the notification with what we have
-          return fetch("/api/notify-visit", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(visitorInfo)
-          });
-        })
-        .then(res => res.json())
-        .then(data => console.log("📩 Visit notification sent:", data))
-        .catch(err => console.error("❌ Notification error:", err));
+        .catch((error) => {
+          // Clear the timeout since we're handling the error
+          clearTimeout(locationTimeout);
+          console.error("Failed to get location:", error);
+          sendNotification(visitorInfo);
+        });
     }, []);
 
   const activateBackend = async () => {
